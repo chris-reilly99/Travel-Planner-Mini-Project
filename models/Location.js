@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection')
 
-class Traveller extends Model {}
+class Location extends Model {}
 
-Traveller.int(
+Location.int(
     {
         id: {
           type: DataTypes.INTEGER,
@@ -11,15 +11,11 @@ Traveller.int(
           primaryKey: true,
           autoIncrement: true,
         },
-        name: {
+        location_name: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        }
     }
 );
 
-module.exports = Traveller;
+module.exports = Location;
